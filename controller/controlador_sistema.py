@@ -1,5 +1,6 @@
 from controller.controlador_clinicas import ControladorClinicas
 from controller.controlador_pessoas import ControladorPessoas
+from controller.controlador_tipos_atendimento import ControladorTiposAtendimento
 from view.tela_sistema import TelaSistema
 
 
@@ -8,7 +9,7 @@ class ControladorSistema:
         self.__tela_sistema = TelaSistema()
         self.__controlador_pessoas = ControladorPessoas(self)
         self.__controlador_clinicas = ControladorClinicas(self)
-        # self.__controlador_tipos_atendimento = ControladorTiposAtendimento(self)
+        self.__controlador_tipos_atendimento = ControladorTiposAtendimento(self)
         # self.__controlador_atendimentos = ControladorAtendimentos(self)
         # self.__controlador_pagamentos = ControladorPagamentos(self)
         # self.__controlador_relatorios = ControladorRelatorios(self)
@@ -20,6 +21,10 @@ class ControladorSistema:
     @property
     def controlador_clinicas(self) -> ControladorClinicas:
         return self.__controlador_clinicas
+
+    @property
+    def controlador_tipos_atendimento(self) -> ControladorTiposAtendimento:
+        return self.__controlador_tipos_atendimento
 
     def inicializa_sistema(self):
         self.abre_tela()
@@ -46,7 +51,7 @@ class ControladorSistema:
         self.__controlador_clinicas.abre_tela()
 
     def cadastra_tipos_atendimento(self):
-        self.__tela_sistema.mostra_mensagem("Em construcao.")
+        self.__controlador_tipos_atendimento.abre_tela()
 
     def registra_atendimentos(self):
         self.__tela_sistema.mostra_mensagem("Em construcao.")
