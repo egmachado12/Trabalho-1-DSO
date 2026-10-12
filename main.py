@@ -1,6 +1,6 @@
-def main():
-    print("Sistema de Clinicas")
+from controller.controlador_sistema import ControladorSistema
 
 
 if __name__ == "__main__":
-    main()
+    ControladorSistema().inicializa_sistema()
+    
