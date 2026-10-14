@@ -4,7 +4,7 @@ from model.clinica import Clinica
 from model.profissional import Profissional
 from model.tipo_atendimento import TipoAtendimento
 from model.paciente import Paciente
-#procedimento
+from model.procedimento import Procedimento
 
 class Atendimento:
     def __init__(self, codigo: int, data: date, hora_inicio: time, hora_fim: time, valor: float, clinica: Clinica,
@@ -109,3 +109,16 @@ class Atendimento:
     def paciente(self, paciente: Paciente):
         if isinstance(paciente, Paciente):
             self.__paciente = paciente
+
+    @property
+    def procedimentos(self) -> list:
+        return self.__procedimentos
+
+    def adicionar_procedimento(self, descricao: str, custo: float, profissional: Profissional):
+        procedimento = Procedimento(descricao, custo, profissional)
+        self.__procedimentos.append(procedimento)
+        return procedimento 
+
+    def remover_procedimento(self, procedimento: Procedimento):
+        if procedimento in self.__procedimentos:
+            self.__procedimentos.remove(procedimento)
