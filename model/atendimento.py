@@ -122,3 +122,9 @@ class Atendimento:
     def remover_procedimento(self, procedimento: Procedimento):
         if procedimento in self.__procedimentos:
             self.__procedimentos.remove(procedimento)
+
+    def valor_total(self) -> float:
+        total = self.__valor
+        for procedimento in self.__procedimentos:
+            total += procedimento.custo
+        return total
