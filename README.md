@@ -23,5 +23,5 @@ Na raiz do projeto:
       main.py       ponto de entrada
 
 ## Autores
-Lucas Nogara Naschenweng: responsável pelos cadastros e relatórios
-Eduardo Gutierres Machado: responsável pelos registros (atendimentos, procedimentos e pagamentos)
+-Lucas Nogara Naschenweng: responsável pelos cadastros e relatórios
+-Eduardo Gutierres Machado: responsável pelos registros (atendimentos, procedimentos e pagamentos)
