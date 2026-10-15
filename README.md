@@ -25,6 +25,3 @@ Na raiz do projeto:
 ## Autores
 Lucas Nogara Naschenweng: responsável pelos cadastros e relatórios
 Eduardo Gutierres Machado: responsável pelos registros (atendimentos, procedimentos e pagamentos)
-
-  - [Nome A]: cadastros e relatórios
-  - [Nome B]: registros (atendimentos, procedimentos e pagamentos)
