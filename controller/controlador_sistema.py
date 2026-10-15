@@ -1,4 +1,6 @@
+from controller.controlador_atendimentos import ControladorAtendimentos
 from controller.controlador_clinicas import ControladorClinicas
+from controller.controlador_pagamentos import ControladorPagamentos
 from controller.controlador_pessoas import ControladorPessoas
 from controller.controlador_relatorios import ControladorRelatorios
 from controller.controlador_tipos_atendimento import ControladorTiposAtendimento
@@ -11,8 +13,8 @@ class ControladorSistema:
         self.__controlador_pessoas = ControladorPessoas(self)
         self.__controlador_clinicas = ControladorClinicas(self)
         self.__controlador_tipos_atendimento = ControladorTiposAtendimento(self)
-        # self.__controlador_atendimentos = ControladorAtendimentos(self)
-        # self.__controlador_pagamentos = ControladorPagamentos(self)
+        self.__controlador_atendimentos = ControladorAtendimentos(self)
+        self.__controlador_pagamentos = ControladorPagamentos(self)
         self.__controlador_relatorios = ControladorRelatorios(self)
 
     @property
@@ -26,6 +28,14 @@ class ControladorSistema:
     @property
     def controlador_tipos_atendimento(self) -> ControladorTiposAtendimento:
         return self.__controlador_tipos_atendimento
+
+    @property
+    def controlador_atendimentos(self) -> ControladorAtendimentos:
+        return self.__controlador_atendimentos
+
+    @property
+    def controlador_pagamentos(self) -> ControladorPagamentos:
+        return self.__controlador_pagamentos
 
     def inicializa_sistema(self):
         self.abre_tela()
@@ -55,10 +65,10 @@ class ControladorSistema:
         self.__controlador_tipos_atendimento.abre_tela()
 
     def registra_atendimentos(self):
-        self.__tela_sistema.mostra_mensagem("Em construcao.")
+        self.__controlador_atendimentos.abre_tela()
 
     def registra_pagamentos(self):
-        self.__tela_sistema.mostra_mensagem("Em construcao.")
+        self.__controlador_pagamentos.abre_tela()
 
     def emite_relatorios(self):
         self.__controlador_relatorios.abre_tela()
